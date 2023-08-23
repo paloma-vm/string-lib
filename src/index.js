@@ -5,7 +5,7 @@ function capitalize(str) {
     otherChars = str.slice(1)
 
     result = upperFirstChar + otherChars
-    console.log(result)
+    // console.log(result)
     return result
 }
 
@@ -20,3 +20,24 @@ function allCaps(str) {
 }
 
 allCaps('hello world')
+
+// CHALLENGE 3
+function capitalizeWords(str) {
+    splitString = str.split(' ')
+    // console.log(splitString)
+    allWordsCap = splitString.map((word => {
+        return capitalize(word)
+    } ))
+    result = allWordsCap.join(' ')
+    console.log(result)
+    return result
+    
+}
+
+capitalizeWords("do all the things")
+
+
+// CHALLENGE 2
+// CHALLENGE 2
+// CHALLENGE 2
+// CHALLENGE 2
