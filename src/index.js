@@ -2,7 +2,7 @@
 function capitalize(str) {
     const firstChar = str[0]
     const upperFirstChar = firstChar.toUpperCase()
-    const notherChars = str.slice(1)
+    const otherChars = str.slice(1)
 
     const result = upperFirstChar + otherChars
     // console.log(result)
@@ -39,11 +39,11 @@ capitalizeWords("do all the things")
 // CHALLENGE 4
 function removeExtraSpaces(str) {
     const noSpaces = str.trim() // removes white space from beginning and end of a string
-    console.log(noSpaces)
+    // console.log(noSpaces)
     const noSpacesArray = noSpaces.split(' ')
-    console.log(noSpacesArray)
+    // console.log(noSpacesArray)
     const filteredArray = noSpacesArray.filter(word => word != '') // filters empty strings
-    console.log(filteredArray)
+    // console.log(filteredArray)
     const result = filteredArray.join(' ')
     console.log(result)
     return result
@@ -51,10 +51,37 @@ function removeExtraSpaces(str) {
 }
 
 removeExtraSpaces('  Hello   World   ')
+
 // CHALLENGE 5
-function kebabCase() {
-    const 
+function kebabCase(str) { // remove extra spaces, replace spaces w/hyphen, all lowercase
+    const permittedChars = []
+    const lowerStr = str.toLowerCase()
+    // console.log(lowerStr)
+    const characters = lowerStr.split('')
+    for (let i = 0; i < characters.length; i++) {
+        const charCode = lowerStr.charCodeAt(i)
+
+        if (
+            (charCode === 32) || // spaces
+            (charCode === 45) || // hyphen
+            (charCode >= 48 && charCode <= 57) || // numbers
+            (charCode >= 97 && charCode <= 122) // lowercase letters
+        ) {
+            permittedChars.push(characters[i])
+            // console.log(permittedChars)
+        }
+    }
+
+    const newStr = permittedChars.join('')
+    // console.log(newStr)
+    const newStrNoExtraSpaces = removeExtraSpaces(newStr)
+    // console.log(newStrNoExtraSpaces)
+    const result = newStrNoExtraSpaces.split(' ').join('-')
+    console.log(result)
+    return result
 
 }
+
+kebabCase(" Hello  World  ")
 // CHALLENGE 2
 // CHALLENGE 2
