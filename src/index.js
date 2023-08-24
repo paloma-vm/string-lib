@@ -83,5 +83,68 @@ function kebabCase(str) { // remove extra spaces, replace spaces w/hyphen, all l
 }
 
 kebabCase(" Hello  World  ")
-// CHALLENGE 2
-// CHALLENGE 2
+
+// CHALLENGE 6
+function snakeOrKebabCase(str, separatingChar) { // remove extra spaces, replace spaces w/underscore or hyphen, all lowercase
+    const permittedChars = []
+    const lowerStr = str.toLowerCase()
+    // console.log(lowerStr)
+    const characters = lowerStr.split('')
+    for (let i = 0; i < characters.length; i++) {
+        const charCode = lowerStr.charCodeAt(i)
+
+        if (
+            (charCode === 32) || // spaces
+            (charCode === 45) || // hyphen
+            (charCode >= 48 && charCode <= 57) || // numbers
+            (charCode >= 97 && charCode <= 122) // lowercase letters
+        ) {
+            permittedChars.push(characters[i])
+            // console.log(permittedChars)
+        }
+    }
+
+    const newStr = permittedChars.join('')
+    // console.log(newStr)
+    const newStrNoExtraSpaces = removeExtraSpaces(newStr)
+    // console.log(newStrNoExtraSpaces)
+    const result = newStrNoExtraSpaces.split(' ').join(separatingChar)
+    console.log(result)
+    return result
+}
+
+snakeOrKebabCase("  what the   heck  ", "_")
+
+// CHALLENGE 7
+function camelCase(str) {
+    const words = str.split(' ') // to get an array of words
+    // console.log(splitString)
+    const wordsToConvert = words.map((word, i) => {
+        if (i === 0) {
+            return word.toLowerCase()
+        } else {
+            return capitalize(word)
+        }
+    })
+    const result = wordsToConvert.join('') // join on an empty string
+    console.log(result)
+    return result  
+}
+
+camelCase('Camel Case')
+
+// CHALLENGE 8
+function shift(str) { // take first char of str and move to end of str
+    const firstChar = str[0]
+    const remainingChars = str.slice(1) // removes first character and returns the 
+                                    // remainder of the string
+    console.log(firstChar)
+    console.log(remainingChars)
+    const result = remainingChars + firstChar
+    console.log(result)
+    return result
+}
+shift('Howdy Planet')
+// CHALLENGE 9
+// CHALLENGE 10
+// CHALLENGE 11
