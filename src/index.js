@@ -168,4 +168,28 @@ function makeHashTag(str) { // convert string to hash tag
 makeHashTag('Amazing bongo drums for sale')
 makeHashTag('Mediocre bongo drums for discount price')
 
+// CHALLENGE 10
+function isEmpty(str) { //returns True if empty or only whitespace (spaces, line returns, tabs)
+    const trimmedStr = str.trim()
+    for (let i = 0; i < trimmedStr.length; i++) {
+        const char = str[i]
+        if (
+            (char !== '') && // empty space
+            (char !== ' ') && // space
+            (char !== '\n') && // new line
+            (char !== '\r') && // carriage return
+            (char !== '\t') // tab
+         ) {
+            return false
+        } 
+    }
+    return true // must be outside the loop
+}
+
+const result = isEmpty('ABC def')
+console.log(result)
+const result2 = isEmpty('          ')
+console.log(result2)
+
+
 
