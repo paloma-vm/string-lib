@@ -138,13 +138,34 @@ function shift(str) { // take first char of str and move to end of str
     const firstChar = str[0]
     const remainingChars = str.slice(1) // removes first character and returns the 
                                     // remainder of the string
-    console.log(firstChar)
-    console.log(remainingChars)
+    // console.log(firstChar)
+    // console.log(remainingChars)
     const result = remainingChars + firstChar
     console.log(result)
     return result
 }
 shift('Howdy Planet')
+
 // CHALLENGE 9
-// CHALLENGE 10
-// CHALLENGE 11
+function makeHashTag(str) { // convert string to hash tag
+    // if string has more than 3 words, use the 3 longest words
+    const words = str.split(' ') // to get an array of words
+    // console.log(words.length)
+    words.sort((a, b) => b.length - a.length) // help from ChatGPT
+    const threeLongestWords = words.slice(0, 3) // takes 3 longest words in the string
+    // console.log(threeLongestWords)
+    const hashTags = []
+    for (let i = 0; i < threeLongestWords.length; i++) {
+        threeLongestWords[i] = threeLongestWords[i].toLowerCase()
+        // console.log(threeLongestWords[i])
+        hashTags[i] = '#' + threeLongestWords[i]
+    }
+    
+    console.log(hashTags)
+    return hashTags
+}
+
+makeHashTag('Amazing bongo drums for sale')
+makeHashTag('Mediocre bongo drums for discount price')
+
+
