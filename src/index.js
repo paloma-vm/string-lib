@@ -191,5 +191,18 @@ console.log(result)
 const result2 = isEmpty('          ')
 console.log(result2)
 
+// CHALLENGE 11
+// add documentation
 
-
+// is there a way to export all at once?
+// export modules
+module.exports.capitalize = capitalize
+module.exports.allCaps = allCaps
+module.exports.capitalizeWords = capitalizeWords
+module.exports.removeExtraSpaces = removeExtraSpaces
+module.exports.kebabCase = kebabCase
+module.exports.snakeOrKebabCase = snakeOrKebabCase
+module.exports.camelCase = camelCase
+module.exports.shift = shift
+module.exports.makeHashTag = makeHashTag
+module.exports.isEmpty = isEmpty
