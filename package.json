@@ -1,7 +1,7 @@
 {
   "name": "@palomavm/string-lib",
   "version": "1.0.3",
-  "description": "- coming soon",
+  "description": "ACS 3310 string library",
   "main": "src/index.js",
   "scripts": {
     "test": "jest"
