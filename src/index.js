@@ -12,16 +12,12 @@ function allCaps(str) {
   return result;
 }
 
-allCaps('hello world');
-
 function capitalizeWords(str) {
   const splitString = str.split(' ');
   const allWordsCap = splitString.map(((word) => capitalize(word)));
   const result = allWordsCap.join(' ');
   return result;
 }
-
-capitalizeWords('do all the things');
 
 function removeExtraSpaces(str) {
   const noSpaces = str.trim(); // removes white space from beginning and end of a string
@@ -97,9 +93,7 @@ function shift(str) { // take first char of str and move to end of str
   const result = remainingChars + firstChar;
   return result;
 }
-shift('Howdy Planet');
 
-// CHALLENGE 9
 function makeHashTag(str) { // convert string to hash tag
   // if string has more than 3 words, use the 3 longest words
   const words = str.split(' '); // to get an array of words
@@ -117,7 +111,6 @@ function makeHashTag(str) { // convert string to hash tag
   return hashTags;
 }
 
-// CHALLENGE 10
 function isEmpty(str) { // returns True if empty or only whitespace (spaces, line returns, tabs)
   const trimmedStr = str.trim();
   for (let i = 0; i < trimmedStr.length; i += 1) {
